@@ -11,6 +11,7 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item.component
 import { RecipeService } from './services/recipe.service';
 import {routing} from './app.routing';
 import { LoginComponent } from './login/login.component';
+import {UserService} from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     routing
   ],
-  providers: [RecipeService],
+  providers: [RecipeService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
