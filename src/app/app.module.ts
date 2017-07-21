@@ -12,6 +12,8 @@ import { RecipeService } from './services/recipe.service';
 import {routing} from './app.routing';
 import { LoginComponent } from './login/login.component';
 import {UserService} from './services/user.service';
+import { AddPlusPipe } from './common/pipes/add-plus.pipe';
+import {AuthenticationGuardService} from './services/authentication-guard.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {UserService} from './services/user.service';
     HeaderComponent,
     RecipeListComponent,
     RecipeItemComponent,
-    LoginComponent
+    LoginComponent,
+    AddPlusPipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import {UserService} from './services/user.service';
     HttpModule,
     routing
   ],
-  providers: [RecipeService, UserService],
+  providers: [RecipeService, UserService, AuthenticationGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
