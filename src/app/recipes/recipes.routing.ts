@@ -6,7 +6,8 @@ import {RecipeListComponent} from './recipe-list/recipe-list.component';
 
 const recipesRoutes: Routes = [
   { path: '', component: RecipesComponent, children: [
-    { path: '', component: RecipeListComponent, canActivate: [AuthenticationGuardService]}
+    { path: '', component: RecipeListComponent, canActivate: [AuthenticationGuardService]},
+    { path: 'add', component: RecipeListComponent, canActivate: [AuthenticationGuardService]}
   ]}
 ];
 

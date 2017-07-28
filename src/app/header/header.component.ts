@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('usuarioActual');
     this.router.navigate(['']);
   }
+
   recipes() {
     this.router.navigate(['recipes']);
   }
