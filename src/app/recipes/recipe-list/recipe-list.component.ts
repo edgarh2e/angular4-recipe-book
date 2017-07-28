@@ -9,7 +9,7 @@ import {AddPlusPipe} from '../../common/pipes/add-plus.pipe';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-
+  selectedRecipe: Recipe;
   recipes: Recipe[] = [];
   newRecipe = 'New Recipe';
 
@@ -22,5 +22,10 @@ export class RecipeListComponent implements OnInit {
       this.recipes = recipes;
     });
   }
+  onSelect(recipe: Recipe): void {
+    this.selectedRecipe = recipe;
+
+  }
+
 
 }
