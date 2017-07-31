@@ -18,8 +18,4 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  recipes() {
-    this.router.navigate(['recipes']);
-  }
-
 }

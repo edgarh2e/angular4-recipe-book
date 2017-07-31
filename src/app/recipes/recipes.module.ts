@@ -5,13 +5,15 @@ import {NgModule} from '@angular/core';
 import {recipesRouting} from './recipes.routing';
 import {ComunModule} from '../common/comun.module';
 import { RecipeDetailComponent } from './recipe-list/recipe-detail.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
     RecipesComponent,
     RecipeListComponent,
     RecipeItemComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    AddComponent
   ],
   imports: [
     ComunModule,
