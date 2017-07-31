@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Recipe} from '../recipe';
 import {RecipeService} from '../../services/recipe.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -11,7 +12,7 @@ export class AddComponent implements OnInit {
 
   recipe: Recipe;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit() {
     this.recipe = new Recipe();
@@ -20,8 +21,11 @@ export class AddComponent implements OnInit {
   addRecipe() {
     console.log('ADD RECIPE: ', this.recipe);
     this.recipeService.addRecipe(this.recipe)
-      .subscribe((respuesta) => {
+      .subscribe((respuesta: boolean) => {
         console.log(respuesta);
+        if (respuesta) {
+          this.router.navigate(['recipes']);
+        }
       });
   }
 
