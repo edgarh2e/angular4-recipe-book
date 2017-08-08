@@ -9,7 +9,7 @@ export class UserService {
 
   constructor(private http: Http) { }
   public getUsers(): Observable<User[]> {
-    return this.http.get('https://private-a925a-users227.apiary-mock.com/users')
+    return this.http.get('http://localhost:8081/service/users/getUsers')
       .map((response: Response) => response.json());
   }
 }

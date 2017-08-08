@@ -11,12 +11,12 @@ export class RecipeService {
 
   public getRecipes(): Observable<Recipe[]> {
     return this.http
-      .get('https://private-cecec6-recipebookangular4.apiary-mock.com/recipes')
+      .get('http://localhost:8081/service/recipes/getRecipes')
       .map((response: Response) => response.json());
   }
 
   public addRecipe(recipe: Recipe): Observable<boolean> {
-    return this.http.post('https://private-cecec6-recipebookangular4.apiary-mock.com/addRecipe',
+    return this.http.post('http://localhost:8081/service/recipes/addRecipe',
       this.getBodyRequest(recipe),
       this.getRequestOptions()).map((response: Response) => response.json());
   }
